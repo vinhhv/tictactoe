@@ -12,4 +12,3 @@ lazy val tictactoe =
     .in(file("."))
     .settings(stdSettings("tictactoe"))
     .settings(libraryDependencies ++= tictactoeDeps)
-

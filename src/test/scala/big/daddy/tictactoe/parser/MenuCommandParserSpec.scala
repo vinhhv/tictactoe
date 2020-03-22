@@ -19,6 +19,11 @@ object MenuCommandParserSpec extends DefaultRunnableSpec(
       testM("`quit` returns Quit command") {
         checkParse("quit", MenuCommand.Quit)
       },
+      testM("any other input returns Invalid command") {
+        checkM(invalidCommandsGen) { input =>
+          checkParse(input, MenuCommand.Invalid)
+        }
+      }
     )
   )
 )
